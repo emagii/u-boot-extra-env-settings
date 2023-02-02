@@ -4,10 +4,15 @@ Create the U-Boot CONFIG_EXTRA_ENV_SETTINGS from a text file
 Each variable is separated by an empty line.
 Indent the variable as you like it to be indented using <space> characters
 A simple pretty printer in u-boot would then allow nice printouts.
+The '#' character at the beginning of a line is the beginning of a comment.
+The "#!" sequence in the beginning of a line is a VARIABLE definition
+
+I.E:
+#!MY_VARIABLE
 
 The end result can then be included in "include/configs/<myheader>.h"
 
-Possible switches in an extension
+Possible switches in an extension (yet to be implemented)
 
     -v|--variable  <variable>   name instead of CONFIG_EXTRA_ENV_SETTINGS
     -f|--file   <file>          read text file instead of stdin
