@@ -1,3 +1,4 @@
+#!MYVARS
 allan=beta
 
 caesar=david
@@ -9,10 +10,12 @@ caesar=david
 eric=farland
 
 
+# This is a comment
 
 
 
-
+#!CONFIG_EXTRA_ENV_SETTINGS
+${MYVARS}
 allan=beta
 
 caesar=2
@@ -24,4 +27,13 @@ else
     run beta;
 fi
 
+#!VARIABLE
+if test -b x ; then
+    run allan;
+# comment in a variable
+else
+    run beta;
+fi
+
 david=3
+#comment at the end
