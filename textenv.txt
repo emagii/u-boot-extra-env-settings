@@ -1,0 +1,27 @@
+allan=beta
+
+caesar=david
+
+
+
+
+
+eric=farland
+
+
+
+
+
+
+allan=beta
+
+caesar=2
+
+script=
+if test -b x ; then
+    run allan;
+else
+    run beta;
+fi
+
+david=3
