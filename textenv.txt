@@ -15,7 +15,9 @@ eric=farland
 
 
 #!CONFIG_EXTRA_ENV_SETTINGS
+
 ${MYVARS}
+
 allan=beta
 
 caesar=2
@@ -35,5 +37,7 @@ else
     run beta;
 fi
 
+# comment at the end
 david=3
-#comment at the end
+
+
