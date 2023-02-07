@@ -5,6 +5,7 @@ APP=genenv
 all:	$(APP)
 
 test:	$(TEXTENV).env
+	printf "\033c"
 	@cat	$<
 
 $(APP):	$(APP).c
