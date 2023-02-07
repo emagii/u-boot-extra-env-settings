@@ -15,9 +15,7 @@ eric=farland
 
 
 #!CONFIG_EXTRA_ENV_SETTINGS
-
 ${MYVARS}
-
 allan=beta
 
 caesar=2
