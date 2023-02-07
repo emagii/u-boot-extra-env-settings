@@ -123,6 +123,20 @@ void hexprint(int start, int stop)
 	}
 }
 
+void process_line(FILE *fd, char *line)
+{
+	char c;
+	while (c = *line) {
+		if (c == '"') {
+			fprintf(fd, "\\\"");
+		} else {
+			fprintf(fd, "%c", c);
+		}
+		line++;
+	}
+}
+
+
 void fprint_var(FILE *fd, uint32_t v)
 {
 	uint32_t line;
@@ -162,7 +176,9 @@ void fprint_var(FILE *fd, uint32_t v)
 			}
 		} else {
 			skip = 0;
-			fprintf(fd, "\t\"%s\" \\\n", p);
+			fprintf(fd, "\t\"");
+			process_line(fd, p);
+			fprintf(fd,"\" \\\n");
 		}
 		line++;
 	} while(!done);
