@@ -304,18 +304,6 @@ int main (int argc, char **argv)
 		printf ("Too many arguments %s\n", argv[optind]);
 		return 1;
 	}
-
-	
-#if	0
-	printf("==================\n");
-	get_file_size(&infile);
-	get_file_size(&outfile);
-	get_file_size(&editfile);
-	fileinfo("infile",   &infile);
-	fileinfo("outfile",  &outfile);
-	fileinfo("editfile", &editfile);
-	printf("==================\n");
-#endif
 	infile.size = get_input(infile.name);
 	if (infile.size == -1) {
 		fprintf(stderr, "Exiting...\n");
@@ -328,25 +316,8 @@ int main (int argc, char **argv)
 			exit(1);
 		}
 	}
-#if	0
-	printf("Read infile success. %d bytes\n", infile.size);
-	hexprint(0, infile.size);
-#endif
-
 	linecount = get_lines();
-#if	0
-	printf("linecount = %d\n", linecount);
-	hexprint(0, infile.size);
-	for (uint32_t i = 0 ; i < linecount ; i++) {
-		if (lines[i] != NULL) {
-			printf("%d:%s\n", i, lines[i]);
-		} else {
-			printf("%d:NULL\n", i);
-		}
-	}
-#endif
 	varcount = scan_vars();
-//	printf("varcount = %d\n", varcount);
 	for (uint32_t v = 0 ; v < varcount ; v++) {
 		fprint_var(of, v);
 	}
